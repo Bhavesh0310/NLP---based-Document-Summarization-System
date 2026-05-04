@@ -1,0 +1,8 @@
+streamlit
+transformers
+torch
+PyPDF2
+beautifulsoup4
+requests
+sentencepiece
+accelerate
