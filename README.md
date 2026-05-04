@@ -55,17 +55,38 @@ In today's digital world, massive amounts of textual data are generated daily. R
 
 ## 🏗️ System Architecture
 
-User Input (PDF / URL)
-↓
-Text Extraction (PyPDF2 / BeautifulSoup)
-↓
-Preprocessing (Cleaning + Tokenization)
-↓
-BART Model (Encoder-Decoder Transformer)
-↓
-Summary Generation (Beam Search)
-↓
-Display + Download Output
+        ┌──────────────┐
+        │   USER INPUT │
+        │ (PDF / URL)  │
+        └──────┬───────┘
+               │
+               ▼
+     ┌──────────────────┐
+     │ TEXT EXTRACTION  │
+     │ (PDF / Web)      │
+     └──────┬───────────┘
+            │
+            ▼
+     ┌──────────────────┐
+     │ PREPROCESSING    │
+     │ (Cleaning + NLP) │
+     └──────┬───────────┘
+            │
+            ▼
+     ┌────────────────────────┐
+     │   BART MODEL           │
+     │ (Encoder → Decoder)    │
+     └──────┬─────────────────┘
+            │
+            ▼
+     ┌──────────────────┐
+     │  SUMMARY OUTPUT  │
+     └──────┬───────────┘
+            │
+            ▼
+     ┌──────────────────┐
+     │ DISPLAY + EXPORT │
+     └──────────────────┘
 
 ---
 
